@@ -5,12 +5,11 @@ export const profile = {
   tagline:
     'I build end-to-end AI systems — RAG pipelines, multi-agent orchestration, and the APIs and frontends that surface them. 3.75 years shipping production AI at Bosch.',
   resumeUrl: '/Akansh_Sharma_Resume.pdf',
-  // TODO: replace with your real profile URLs.
   links: {
     email: 'akanshsh15@gmail.com',
     phone: '+91 9663211506',
-    linkedin: 'www.linkedin.com/in/akansh-sharma', 
-    github: 'https://github.com/AkanshSharma-cod', // TODO: add your handle
+    linkedin: 'https://www.linkedin.com/in/akansh-sharma',
+    github: 'https://github.com/AkanshSharma-cod',
   },
 };
 
