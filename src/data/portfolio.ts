@@ -147,7 +147,6 @@ export const primaryStack: StackItem[] = [
   { label: 'Multi-Agent Systems', icon: 'hub' },
   { label: 'Azure OpenAI', icon: 'cloud' },
   { label: 'Microsoft Fabric', icon: 'database' },
-  { label: 'React', icon: 'code' },
 ];
 
 export const suggestedPrompts = [
