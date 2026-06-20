@@ -1,0 +1,253 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------ */
+/* Design tokens (translated from the Stitch export)                  */
+/* ------------------------------------------------------------------ */
+@theme {
+  /* Fonts */
+  --font-display: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-label: 'Geist', 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  /* Colors */
+  --color-background: #141313;
+  --color-surface: #141313;
+  --color-surface-dim: #141313;
+  --color-surface-bright: #3a3939;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-container: #201f1f;
+  --color-surface-container-high: #2b2a2a;
+  --color-surface-container-highest: #353434;
+  --color-surface-variant: #353434;
+  --color-on-surface: #e5e2e1;
+  --color-on-surface-variant: #c4c7c7;
+  --color-primary: #c8c6c5;
+  --color-on-primary: #313030;
+  --color-secondary: #adc6ff;
+  --color-secondary-container: #0566d9;
+  --color-on-secondary-container: #e6ecff;
+  --color-tertiary: #b7c8e1;
+  --color-outline: #8e9192;
+  --color-outline-variant: #444748;
+  --color-accent-blue: #0566d9;
+  --color-error: #ffb4ab;
+
+  /* Spacing scale */
+  --spacing-base: 8px;
+  --spacing-gutter: 24px;
+  --spacing-section-gap: 160px;
+  --spacing-margin-mobile: 20px;
+  --spacing-margin-desktop: 64px;
+
+  /* Type scale */
+  --text-display-xl: 72px;
+  --text-display-xl--line-height: 1.1;
+  --text-display-xl--letter-spacing: -0.03em;
+  --text-display-xl--font-weight: 800;
+
+  --text-display-xl-mobile: 48px;
+  --text-display-xl-mobile--line-height: 1.1;
+  --text-display-xl-mobile--letter-spacing: -0.02em;
+  --text-display-xl-mobile--font-weight: 800;
+
+  --text-headline-lg: 40px;
+  --text-headline-lg--line-height: 1.2;
+  --text-headline-lg--letter-spacing: -0.01em;
+  --text-headline-lg--font-weight: 700;
+
+  --text-headline-lg-mobile: 32px;
+  --text-headline-lg-mobile--line-height: 1.2;
+  --text-headline-lg-mobile--letter-spacing: -0.01em;
+  --text-headline-lg-mobile--font-weight: 700;
+
+  --text-title-md: 24px;
+  --text-title-md--line-height: 1.4;
+  --text-title-md--letter-spacing: -0.01em;
+  --text-title-md--font-weight: 600;
+
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 1.6;
+
+  --text-body-md: 16px;
+  --text-body-md--line-height: 1.6;
+
+  --text-label-sm: 14px;
+  --text-label-sm--line-height: 1;
+  --text-label-sm--letter-spacing: 0.05em;
+  --text-label-sm--font-weight: 500;
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                               */
+/* ------------------------------------------------------------------ */
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #141313;
+  color: #e5e2e1;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  line-height: 1;
+}
+
+/* ------------------------------------------------------------------ */
+/* Stitch effects                                                     */
+/* ------------------------------------------------------------------ */
+.bg-glow-hero {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 60%;
+  height: 80%;
+  background: radial-gradient(circle at center, rgba(5, 102, 217, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-glow-footer {
+  position: fixed;
+  bottom: -10%;
+  right: -10%;
+  width: 40%;
+  height: 40%;
+  background: radial-gradient(circle at center, rgba(5, 102, 217, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glow-button:hover {
+  box-shadow: 0 0 25px rgba(5, 102, 217, 0.4);
+  transform: translateY(-1px);
+}
+
+.glass-card {
+  background: rgba(32, 31, 31, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s ease;
+}
+.glass-card:hover {
+  border-color: rgba(5, 102, 217, 0.4);
+  background: rgba(32, 31, 31, 0.6);
+}
+
+.zebra-list-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: #0566d9;
+  border-radius: 9999px;
+  transition: width 0.2s ease;
+}
+.zebra-list-item:hover::after {
+  width: 4px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #adc6ff 0%, #0566d9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Scroll-reveal (applied via IntersectionObserver in useReveal) */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ------------------------------------------------------------------ */
+/* Chat                                                               */
+/* ------------------------------------------------------------------ */
+.prose-chat p {
+  margin: 0 0 0.6rem;
+}
+.prose-chat p:last-child {
+  margin-bottom: 0;
+}
+.prose-chat ul,
+.prose-chat ol {
+  margin: 0 0 0.6rem;
+  padding-left: 1.1rem;
+  list-style: revert;
+}
+.prose-chat li {
+  margin: 0.15rem 0;
+}
+.prose-chat strong {
+  color: #f4f4f5;
+  font-weight: 600;
+}
+.prose-chat code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.85em;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.25rem;
+}
+.prose-chat a {
+  color: #adc6ff;
+  text-decoration: underline;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.typing-dot {
+  animation: blink 1.2s infinite;
+}
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
